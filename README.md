@@ -1,6 +1,5 @@
 Prueba Git
 
-
-MGsus...
+#MGsus
 
 Esto no es un README.md
