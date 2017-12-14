@@ -2,4 +2,6 @@ Prueba Git
 
 # MGsus
 
-Esto no es un README.md
+## Algunos algoritmos de ayuda.
+
+### En C++
