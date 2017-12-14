@@ -1,2 +1,2 @@
-$ cat .gitignore
-.exe
+# G++ generated file
+*.exe
