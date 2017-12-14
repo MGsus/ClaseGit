@@ -1,3 +1,0 @@
-C:/Users/jesus_000/Desktop/Programacion Competitiva C++/Fibonacci/cmake-build-debug/CMakeFiles/Fibonacci.dir
-C:/Users/jesus_000/Desktop/Programacion Competitiva C++/Fibonacci/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/jesus_000/Desktop/Programacion Competitiva C++/Fibonacci/cmake-build-debug/CMakeFiles/rebuild_cache.dir
