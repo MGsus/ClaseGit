@@ -10,6 +10,21 @@ class Rectangle {
         int _height;
 
     public:
+        //Constructor vacío o default
+        Rectangle() : _width{}, _height{} {
+
+        }
+        // Initialize the _width and _height
+        Rectangle(int initial_width, int initial_height): _width{initial_width}, _height{initial_height}
+        {
+
+        }
+
+        void resize(int new_width, int new_height){
+          _width = new_width;
+          _height = new_height;
+        }
+
         int get_area() { // Class Function to get area
             return this->_width * this->_height;
         }
