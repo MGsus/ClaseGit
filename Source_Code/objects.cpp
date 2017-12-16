@@ -10,9 +10,9 @@ class Rectangle {
 };
 
 int main(void) {
-    Rectangle inner;
+    Rectangle inner; // NEVER do this
     //Less specific initialization, default values
-    Rectangle outer{}; // _width = 0; _height=0
+    Rectangle outer{}; // _width = 0; _height=0. Nice practice
 
     // Dot initialization
     /*    outer._width = 10;
