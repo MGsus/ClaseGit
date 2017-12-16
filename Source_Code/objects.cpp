@@ -4,9 +4,21 @@
 using namespace std;
 
 class Rectangle {
-    public:
+
+    private:
         int _width;
         int _height;
+
+    public:
+        int get_area() { // Class Function to get area
+            return this->_width * this->_height;
+        }
+        int get_width() {
+            return _width;
+        }
+        int get_height() {
+            return _height;
+        }
 };
 
 int main(void) {
@@ -21,8 +33,13 @@ int main(void) {
     inner._width = 5;
     inner._height = 5;
 
+    //Example of encapsulation
+    Rectangle a_rectangle{3, 4};
+    int the_area = a_rectangle.get_area(); //int the_area{a_rectangle.get_area()};
+
     //Couts
     cout << inner._width << endl << inner._height << endl;
     cout << "Outer rectangle:" << endl << outer._width << endl <<
         outer._height << endl;
+    cout << "Area proof: " << the_area << endl;
 }
