@@ -1,5 +1,6 @@
 #include <bits/stdc++.h>
-
+//U can create a header and then include in you .cpp files
+// #include <Rectangle.h>
 using namespace std;
 
 class Rectangle {
