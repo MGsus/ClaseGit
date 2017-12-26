@@ -3,13 +3,13 @@
 using namespace std;
 
 int binarySearch(int entrada[], int izq, int der, int target) {
-    while (l <= r) {
-        int mitad = l + (r - 1) / 2;
+    while (izq <= der) {
+        int mitad = izq + (der - 1) / 2;
 
-        if (entrada[mitad] == objetivo) {
+        if (entrada[mitad] == target) {
             return mitad;
         }
-        if (entrada[mitad] < x) { // si el objetivo es más grande, se ignora la parte izquierda
+        if (entrada[mitad] < target) { // si el objetivo es más grande, se ignora la parte izquierda
             izq = mitad + 1;
         }
         else //Si el objetivo es más pequeño, se ignora la parte derecha
