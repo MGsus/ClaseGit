@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int getDeg(int node, vector<vector<int>> edges) {
+int getDeg(int node, vector<vector<int>>& edges) {
     int d = 0;
     for (int i = 0; i < edges.size(); i++) {
         d += edges[node][i];
@@ -10,7 +10,7 @@ int getDeg(int node, vector<vector<int>> edges) {
     return d;
 }
 
-int getBucles(vector<vector<int>> _edg) {
+int getBucles(vector<vector<int>>& _edg) {
     int bNum = 0;
     for (int i = 0; i < _edg.size(); i++) {
         if (_edg[i][i] == 2) {
@@ -20,7 +20,7 @@ int getBucles(vector<vector<int>> _edg) {
     return bNum;
 }
 
-char getLetter(vector<vector<int>> _edg) {
+char getLetter(vector<vector<int>>& _edg) {
     char letter;
     for (int i = 0; i < _edg.size(); i++) {
         for (int j = 0; j < _edg.size(); j++) {
