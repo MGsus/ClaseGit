@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main() {
+int main(void) {
     string input;
     int res = 0;
     cin >> input;
