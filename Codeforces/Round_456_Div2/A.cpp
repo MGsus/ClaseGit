@@ -1,12 +1,12 @@
 //My code wrong code :(
+/*
+ #include <bits/stdc++.h>
 
-#include <bits/stdc++.h>
+   using namespace std;
 
-using namespace std;
+   long long int yellowC, blueC, yellowB, greenB, blueB, res;
 
-long long int yellowC, blueC, yellowB, greenB, blueB, res;
-
-int main() {
+   int main() {
 
     scanf("%d %d", &yellowC, &blueC);
     scanf("%d %d %d", &yellowB, &greenB, &blueB);
@@ -37,22 +37,23 @@ int main() {
     }
     cout << res;
     return 0;
-}
-
+   }
+ */
 // Good Code
-/*
- #include <bits/stdc++.h>
 
-   using namespace std;
+#include <bits/stdc++.h>
 
-   long long int yellowC, blueC, yellowB, greenB, blueB, res;
+using namespace std;
 
-   int main() {
+long long int yellowC, blueC, yellowB, greenB, blueB, res;
+
+int main() {
 
     scanf("%d %d", &yellowC, &blueC);
     scanf("%d %d %d", &yellowB, &greenB, &blueB);
 
-    res = max(0LL, 2 * yellowB + greenB - yellowC) + max(0LL,3 * blueB + greenB - blueC);
+    res = max(0LL, 2 * yellowB + greenB - yellowC) + max(0LL, 3 * blueB +
+                                                         greenB - blueC);
     cout << res;
-   }
- */
+    return 0;
+}
