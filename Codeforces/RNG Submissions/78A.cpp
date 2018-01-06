@@ -10,9 +10,8 @@ int main() {
         string str;
         getline(cin, str);
         for (char j: str) {
-            if (j == 'a' || j == 'e' || j == 'i' || j == 'o' || j == 'u') {
+            if (j == 'a' || j == 'e' || j == 'i' || j == 'o' || j == 'u')
                 res++;
-            }
         }
         if (res != s[i])
             isHaiku = false;
