@@ -10,7 +10,7 @@ int main() {
     string s;
 
     ofstream ofile("result.txt", ios::out);
-    ifstream data("bridges-easy-in.txt", ios::in);
+    ifstream data("bridges-hard-in.txt", ios::in);
 
     data >> t;
     for (int i = 0; i < t; i++) {
