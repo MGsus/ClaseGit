@@ -8,6 +8,6 @@ int m;
 int main( ) {
     scanf("%d %d", &n, &m);
     if (n >= 30)
-        return printf("%d\n", m);
-    return printf("%d\n", m % (1 << n));
+        return printf("%d", m);
+    return printf("%d", m % (1 << n)); // (1 << n) == 2 a la n
 }
