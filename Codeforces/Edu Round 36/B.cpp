@@ -3,27 +3,22 @@
 using namespace std;
 
 int main( ) {
-    int n, pos, l, r;
+    int n, pos, l, r, ans;
     int count = 0;
     scanf("%d %d %d %d", &n, &pos, &l, &r);
     if (l == 1 && r == n) {
         cout << 0;
         return 0;
     }
-    else{
-        if (pos > l && l != 1) {
-            count += pos - l + 1;
-        }
-        if (pos < r && r != n) {
-            count += r - pos + 1;
-        }
-        if (pos == r && l == 1 || pos == l && r == n) {
-            count++;
-        }
-        if (pos > l && pos < r) {
-            count += r - pos;
-        }
+    if (l == 1 && r != n) {
+        cout << abs(pos - r) + 1;
+        return 0;
     }
-    cout << count;
+    if (l != 1 && r == n) {
+        cout << abs(pos - l) + 1;
+        return 0;
+    }
+    ans = min(abs(pos - l) + 1 + abs(l - r) + 1, abs(pos - r) + 1 + abs(l - r) + 1);
+    cout << ans << '\n';
     return 0;
 }
