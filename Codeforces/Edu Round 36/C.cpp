@@ -3,13 +3,17 @@
 using namespace std;
 
 int main( ) {
+
+    //freopen("input.txt", "r", stdin);
+    //freopen("output.txt", "w", stdout);
     string a, r;
-    long long int b;
+    long long b;
     cin >> a;
     cin >> b;
     sort(a.begin(), a.end());
+    long long n = stoll(a);
     do {
-        if (stoll(a) < b) {
+        if (n < b) {
             r = a;
         }
     }
