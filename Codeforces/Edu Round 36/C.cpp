@@ -11,9 +11,8 @@ int main( ) {
     cin >> a;
     cin >> b;
     sort(a.begin(), a.end());
-    long long n = stoll(a);
     do {
-        if (n < b) {
+        if (stoll(a) < b) {
             r = a;
         }
     }
