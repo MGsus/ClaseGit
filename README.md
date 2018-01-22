@@ -1,7 +1,2 @@
 Prueba Git
-
-# MGsus
-
-## Algunos algoritmos de ayuda.
-
-### En C++
+# By **_Gsus_**
