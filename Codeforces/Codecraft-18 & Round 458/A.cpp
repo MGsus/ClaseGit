@@ -21,11 +21,7 @@ int main() {
     }
     for (ll i: v) {
         if (!isPerfect(i)) {
-            if (i == 0) {
-                if (i > aux)
-                    aux = i;
-            }
-            else if (i > 0) {
+            if (i > 0) {
                 if (i > aux)
                     aux = i;
             }
