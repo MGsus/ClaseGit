@@ -9,7 +9,7 @@ int main() {
     scanf("%lld %lld", &yellowC, &blueC);
     scanf("%lld %lld %lld", &yellowB, &greenB, &blueB);
 
-    res = max(0LL, 2 * yellowB + greenB - yellowC) + max(0LL, 3 * blueB + greenB - blueC);
+    ll res = max(0LL, 2 * yellowB + greenB - yellowC) + max(0LL, 3 * blueB + greenB - blueC);
     cout << res;
     return 0;
 }
