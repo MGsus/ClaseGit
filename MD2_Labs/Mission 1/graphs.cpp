@@ -31,6 +31,10 @@ char getLetter(vector<vector<int>> &_edg)
 
 int main()
 {
+
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
+
     int casos;
     vector<vector<int>> _edges;
     int edgesNum;
@@ -38,7 +42,7 @@ int main()
     int start;
     int end;
 
-    freopen("grafos-easy-in.txt", "r", stdin);
+    freopen("grafos-hard-in.txt", "r", stdin); // Apertura de archivo que deja usar cin, cout, scanf, printf
     freopen("output.txt", "w", stdout);
 
     scanf("%d", &casos);

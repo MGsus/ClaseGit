@@ -2,50 +2,58 @@
 
 using namespace std;
 
-int main() {
-
+int main()
+{
+    ios_base::sync_with_stdio(false);
+    cin.tie(0);
     int t;
     unsigned int n;
     vector<vector<int>> _edges;
     string s;
 
-    ofstream ofile("result.txt", ios::out);
-    ifstream data("bridges-hard-in.txt", ios::in);
+    ofstream ofile("result.txt", ios::out);        // cambia cout por ofile
+    ifstream data("bridges-hard-in.txt", ios::in); // cambia cin por data
 
     data >> t;
-    for (int i = 0; i < t; i++) {
+    for (int i = 0; i < t; i++)
+    {
         data >> n;
         _edges.resize(n);
-        for (int j = 0; j < n; ++j) {
+        for (int j = 0; j < n; ++j)
+        {
             _edges[j].resize(n);
         }
         bool visited[n] = {false};
         int stack[n] = {0};
         int size = 0;
-        for (int k = 0; k < n; k++) {
-            for (int l = 0; l < n; l++) {
+        for (int k = 0; k < n; k++)
+        {
+            for (int l = 0; l < n; l++)
                 _edges[k][l] = 0;
-            }
         }
-        for (int g = 0; g < n; g++) {
+        for (int g = 0; g < n; g++)
+        {
             data >> s;
-            for (int m = 0; m < s.length(); m++) {
-                if (s[m] == '1') {
+            for (int m = 0; m < s.length(); m++)
+            {
+                if (s[m] == '1')
                     _edges[g][m]++;
-                }
             }
         }
         int nI = 0;
         stack[size] = nI;
         size++;
 
-        while (size != 0) {
+        while (size != 0)
+        {
             nI = stack[size];
             visited[nI] = true;
             size--;
 
-            for (int nV = 0; nV < n; nV++) {
-                if (!visited[nV] && _edges[nI][nV] == 1) {
+            for (int nV = 0; nV < n; nV++)
+            {
+                if (!visited[nV] && _edges[nI][nV] == 1)
+                {
                     visited[nV] = true;
                     size++;
                     stack[size] = nV;
@@ -53,18 +61,20 @@ int main() {
             }
         }
         int count = 0;
-        for (int q = 0; q < n; q++) {
-            if (visited[q]) {
+        for (int q = 0; q < n; q++)
+        {
+            if (visited[q])
                 count++;
-            }
         }
-        if (i == t - 1) {
+        if (i == t - 1)
+        {
             if (count == n)
                 ofile << "POSIBLE";
             else
                 ofile << "IMPOSIBLE";
         }
-        else{
+        else
+        {
             if (count == n)
                 ofile << "POSIBLE" << endl;
             else
