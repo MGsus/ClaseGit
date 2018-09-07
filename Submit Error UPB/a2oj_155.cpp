@@ -2,22 +2,18 @@
 #define MOD 33554431
 using namespace std;
 
-int t, n;
+int t, n, res;
 
-int main(int argc, char const *argv[]) {
+int main(int argc, char const *argv[])
+{
     ios_base::sync_with_stdio(false);
     cin.tie(0);
     cin >> t;
-    for (int i = 0; i < t; i++) {
-        int s = 0;
+    for (int i = 0; i < t; i++)
+    {
         cin >> n;
-        for (int j = 0; j <= n; j++) {
-            s += (1 << j);
-        }
-        if (s > MOD)
-            cout << s % MOD << '\n';
-        else
-            cout << s << '\n';
+        res = ((1 << (n + 1)) - 1) / (2 - 1) % MOD;
+        cout << res;
     }
     return 0;
 }
