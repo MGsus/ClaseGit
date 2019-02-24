@@ -1,5 +1,7 @@
 #include <bits/stdc++.h>
 
+#define forn(i, n) for (int i = 0; i < int(n); i++)
+
 using namespace std;
 
 int getDeg(int node, vector<vector<int>> &edges)
@@ -51,17 +53,18 @@ int main()
         int bucles = 0;
         scanf("%d", &nodos);
         _edges.resize(nodos);
-        for (int l = 0; l < nodos; ++l)
+        forn(l, nodos)
         {
             _edges[l].resize(nodos);
         }
-        for (int k = 0; k < nodos; k++)
+        forn(k, nodos)
         {
-            for (int l = 0; l < nodos; l++)
+            forn(l, nodos)
             {
                 _edges[k][l] = 0;
             }
         }
+
         scanf("%d", &edgesNum);
         for (int j = 0; j < edgesNum; j++)
         {
