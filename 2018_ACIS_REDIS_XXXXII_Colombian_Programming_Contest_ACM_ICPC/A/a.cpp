@@ -1,9 +1,6 @@
 #include <bits/stdc++.h>
-
 using namespace std;
-using namespace std::chrono;
-
-#define LOCAL
+using namespace chrono;
 
 string to_string(string s)
 {
@@ -53,13 +50,13 @@ void debug_out(Head H, Tail... T)
     debug_out(T...);
 }
 
-#ifdef LOCAL
+#ifdef DEBUG
 #define debug(...) cerr << "[" << #__VA_ARGS__ << "]:", debug_out(__VA_ARGS__)
 #else
 #define debug(...)
 #endif
 
-vector<string> split(const string &text, char sep)
+inline vector<string> split(const string &text, char sep)
 {
     vector<string> tokens;
     size_t start = 0, end = 0;
@@ -74,8 +71,25 @@ vector<string> split(const string &text, char sep)
     return tokens;
 }
 
+inline int calcT_Score(vector<string> s)
+{
+    int totalScore = 0;
+    for (int j = 0; j < 5; j++)
+    {
+        if ((s[j] == "1") && (j == 4))
+        {
+            totalScore += 2;
+        }
+        else if (s[j] == "1")
+        {
+            totalScore += 1;
+        }
+    }
+    return totalScore;
+}
+
 //Variables
-int n;
+int n, cont = 0;
 string p;
 
 int main(int argc, char const *argv[])
@@ -86,27 +100,51 @@ int main(int argc, char const *argv[])
     freopen("in.txt", "r", stdin);
     freopen("out.txt", "w", stdout);
 #endif
-    auto s1 = std::chrono::high_resolution_clock::now();
+    // auto s1 = std::chrono::high_resolution_clock::now();
     while (cin >> n)
     {
-        string wl;
-        getline(cin, wl);
+        cont += 1;
+        // map<string, int, comp> player;
+        vector<pair<string, int>> pairs;
+        string blankl;
+        cout << "Case " << cont << ":\n";
+        getline(cin, blankl);
         for (int i = 0; i < n; i++)
         {
+
             getline(cin, p);
             vector<string> v = split(p, ';');
-            //debug(v);
             string name = v[0];
             vector<string> s1 = split(v[1], ' ');
             vector<string> s2 = split(v[2], ' ');
             vector<string> s3 = split(v[3], ' ');
             vector<string> s4 = split(v[4], ' ');
             vector<string> s5 = split(v[5], ' ');
+            // player[name] = (calcT_Score(s1) + calcT_Score(s2) + calcT_Score(s3) + calcT_Score(s4) + calcT_Score(s5));
+            pairs.push_back(make_pair(name, calcT_Score(s1) + calcT_Score(s2) + calcT_Score(s3) + calcT_Score(s4) + calcT_Score(s5)));
         }
+
+        // ordenamiento del map por valor
+        // for (auto itr = player.begin(); itr != player.end(); ++itr)
+        //     pairs.push_back(*itr);
+        sort(pairs.begin(), pairs.end(), [=](pair<string, int> &a, pair<string, int> &b) {
+            if (islower(a.first[0]))
+                return false;
+            else if (islower(b.first[0]))
+                return false;
+            else
+                return a.first < b.first;
+        });
+        sort(pairs.begin(), pairs.end(), [=](pair<string, int> &a, pair<string, int> &b) {
+            return a.second > b.second;
+        });
+        for (auto item : pairs)
+            cout << item.first << ' ' << item.second << '\n';
     }
-    auto s2 = high_resolution_clock::now();
-    auto finalT = duration_cast<microseconds>(s2 - s1);
-    cout << finalT.count();
+
+    // auto s2 = high_resolution_clock::now();
+    // auto finalT = duration_cast<milliseconds>(s2 - s1);
+    // cerr << finalT.count() << " ms" << '\n';
 
     return 0;
 }
