@@ -88,7 +88,6 @@ inline int calcT_Score(vector<string> s)
     return totalScore;
 }
 
-//Variables
 int n, cont = 0;
 string p;
 
@@ -104,7 +103,6 @@ int main(int argc, char const *argv[])
     while (cin >> n)
     {
         cont += 1;
-        // map<string, int, comp> player;
         vector<pair<string, int>> pairs;
         string blankl;
         cout << "Case " << cont << ":\n";
@@ -120,13 +118,9 @@ int main(int argc, char const *argv[])
             vector<string> s3 = split(v[3], ' ');
             vector<string> s4 = split(v[4], ' ');
             vector<string> s5 = split(v[5], ' ');
-            // player[name] = (calcT_Score(s1) + calcT_Score(s2) + calcT_Score(s3) + calcT_Score(s4) + calcT_Score(s5));
             pairs.push_back(make_pair(name, calcT_Score(s1) + calcT_Score(s2) + calcT_Score(s3) + calcT_Score(s4) + calcT_Score(s5)));
         }
 
-        // ordenamiento del map por valor
-        // for (auto itr = player.begin(); itr != player.end(); ++itr)
-        //     pairs.push_back(*itr);
         sort(pairs.begin(), pairs.end(), [=](pair<string, int> &a, pair<string, int> &b) {
             if (islower(a.first[0]))
                 return false;
