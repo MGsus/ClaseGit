@@ -1,7 +1,9 @@
 #include <bits/stdc++.h>
+#define all(x) (x).front(), (x).back()
+// #define LOCAL
 
 using namespace std;
-using namespace chrono;
+// using namespace chrono;
 
 string to_string(string s)
 {
@@ -106,43 +108,40 @@ pair<bool, int> binarySearch(vector<int> v, int _first, int _last, int _val)
     }
 }
 
-int n, i, j, cont = 0;
-
-int main(int argc, char const *argv[])
+int main()
 {
-    // 3 2 5
-    // 3 5 7
-    // 2 1 2
-    // 2 2 1
     ios_base::sync_with_stdio(false);
     cin.tie(0);
 #ifndef ONLINE_JUDGE
     freopen("in.txt", "r", stdin);
     freopen("out.txt", "w", stdout);
 #endif
-
-    auto s1 = std::chrono::high_resolution_clock::now();
-    while (cin >> n)
+    int n, i, j;
+    // auto s1 = std::chrono::high_resolution_clock::now();
+    while (scanf("%d %d %d", &n, &i, &j) == 3)
     {
-        int _size = (rise(2, n));
-        cin >> i >> j;
+        // cin >> i >> j;
+        long int _size = (rise(2, n));
         vector<int> p1(_size);
         for (int l = 0; l < _size; l++)
             p1[l] = l + 1;
-        pair<bool, int> round_i = binarySearch(p1, p1.front(), p1.back(), i);
-        pair<bool, int> round_j = binarySearch(p1, p1.front(), p1.back(), j);
+        pair<bool, int> round_i = binarySearch(p1, all(p1), i);
+        pair<bool, int> round_j = binarySearch(p1, all(p1), j);
 
         if (round_i.first == false and round_j.first == true)
-            cout << n << '\n';
-        else if (j % 2 == 0 and (i + 1) == j)
-            cout << 1 << '\n';
+            // cout << n << '\n';
+            printf("%d\n", n);
+        else if (j % 2 == 0 && (i + 1) == j || j % 2 == 1 && (i - 1) == j)
+            // cout << 1 << '\n';
+            printf("%d\n", 1);
         else if (round_i.first == round_j.first)
             if ((round_i.second == round_j.second) || round_i.second < round_j.second || round_i.second > round_j.second)
-                cout << n - 1 << '\n';
+                // cout << n - 1 << '\n';
+                printf("%d\n", n - 1);
     }
-    auto s2 = high_resolution_clock::now();
-    auto finalT = duration_cast<milliseconds>(s2 - s1);
-    cout << "===\n" << finalT.count() << " ms";
+    // auto s2 = high_resolution_clock::now();
+    // auto finalT = duration_cast<milliseconds>(s2 - s1);
+    // cout << "===\n" << finalT.count() << " ms";
 
     return 0;
 }
