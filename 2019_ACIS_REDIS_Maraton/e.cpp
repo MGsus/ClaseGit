@@ -16,6 +16,7 @@
 
 using namespace std;
 
+#pragma region DEBUG
 string to_string(string s)
 {
     return '"' + s + '"';
@@ -69,6 +70,8 @@ void debug_out(Head H, Tail... T)
 #else
 #define debug(...)
 #endif
+
+#pragma endregion
 
 typedef long long i64;
 

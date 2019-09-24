@@ -9,6 +9,7 @@
 #define pb push_back
 #define forn(i, n) for (int i = 0; i < (int)(n); ++i)
 #define for1(i, n) for (int i = 1; i <= (int)(n); ++i)
+#define fore(i, n) for (auto &i : n)
 
 using namespace std;
 
@@ -115,7 +116,7 @@ int main()
         }
         res.pb(cont);
     }
-    for (auto &i : res)
+    fore(i,res)
         cout << i << endl;
 
     return 0;

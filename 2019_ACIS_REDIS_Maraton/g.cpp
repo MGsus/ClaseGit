@@ -1,13 +1,12 @@
 #include <bits/stdc++.h>
 
-#define mp make_pair
-#define put insert
 #define endl '\n'
 #define forn(i, n) for (int i = 0; i < (int)(n); ++i)
 #define for1(i, n) for (int i = 1; i <= (int)(n); ++i)
 
 using namespace std;
 
+#pragma region DEBUG
 string to_string(string s)
 {
     return '"' + s + '"';
@@ -61,6 +60,7 @@ void debug_out(Head H, Tail... T)
 #else
 #define debug(...)
 #endif
+#pragma endregion
 
 int main()
 {
