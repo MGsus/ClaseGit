@@ -70,61 +70,50 @@ void debug_out(Head H, Tail... T)
 #define debug(...)
 #endif
 
-string toLower(string a)
-{
-    forn(i, a.size())
-        a[i] = tolower(a[i]);
-    return a;
-}
+typedef long long i64;
 
-bool cmpStr(string a, string b)
-{
-    return toLower(a) < toLower(b);
-}
-bool cmp(pair<int, string> &a, pair<int, string> &b)
-{
-    if (a.first != b.first)
-        return a.first > b.first;
-    return cmpStr(a.second, b.second);
-}
 int main()
 {
-    int n, cases = 0;
-    char s[1024];
-    while (scanf("%d", &n) == 1)
+    bool flag = true;
+    while (flag)
     {
-        while (getchar() != '\n')
-            ;
-        vector<pair<int, string>> A;
-        A.reserve(n);
-        for (int i = 0; i < n; i++)
+        vector<i64> v;
+        string tmp;
+        forn(i, 25)
         {
-            fgets(s, 1024, stdin);
-            char *tok = strtok(s, ";");
-            string name = tok;
-            debug(name);
-            tok = strtok(NULL, ";");
-            int pts = 0;
-            while (tok != NULL)
+            int ascii = getchar();
+
+            string s;
+            s = (char)ascii;
+
+            if (s != " ")
+                tmp += s;
+            if (s == " " || ascii == -1)
             {
-                int a, b, c, d, e;
-                sscanf(tok, "%d %d %d %d %d", &a, &b, &c, &d, &e);
-                pts += (a + b + c + d) + e * 2;
-                tok = strtok(NULL, ";");
+                v.pb(stoll(tmp));
+                tmp = "";
             }
-            A.eb(make_pair(pts, name));
+            if (s == "\n")
+            {
+                v.pb(stoll(tmp));
+                tmp = "";
+                break;
+            }
+            if (ascii == -1)
+            {
+                flag = false;
+                break;
+            }
         }
-        debug(A);
-        sort(A.begin(), A.end(), cmp);
-        printf("Case %d:\n", ++cases);
-        fore(e, A)
-            printf("%s %d\n", e.second.c_str(), e.first);
+        debug(v);
+        int cont = 0;
+        fore(i, v)
+        {
+            if (i % 6 == 0)
+                cont++;
+        }
+        printf("%d\n", ((100 * cont) / v.size()));
     }
+
     return 0;
 }
-/*
-3
-Michael Jordan;0 1 1 0 1;0 1 1 0 1;0 1 1 0 1;0 0 0 0 1;0 0 0 0 1
-Scotty Pippen;0 1 1 0 1;0 1 1 0 1;0 1 1 0 1;0 0 0 0 1;0 0 0 1 1
-Charles Barkley;0 1 1 0 1;0 1 1 0 1;0 1 1 0 1;0 0 0 0 1;0 0 1 1 1
-*/

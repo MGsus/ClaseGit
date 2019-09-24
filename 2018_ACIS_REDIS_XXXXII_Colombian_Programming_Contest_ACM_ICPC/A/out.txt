@@ -1,19 +1,12 @@
 Case 1:
-aA 20
-Aa 20
-Case 2:
-a B 20
-ab 20
-aBc 20
-Case 3:
 Charles Barkley 18
 Scotty Pippen 17
 Michael Jordan 16
-Case 4:
+Case 2:
 Charles 20
 Michael 20
 Scotty 20
-Case 5:
+Case 3:
 Charl es Barkley 20
 Charle s Barkley 20
 Charles Barkley 20
