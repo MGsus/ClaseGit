@@ -97,7 +97,7 @@ int main()
             ;
         vector<pair<int, string>> A;
         A.reserve(n);
-        for (int i = 0; i < n; i++)
+        forn(i, n)
         {
             fgets(s, 1024, stdin);
             char *tok = strtok(s, ";");
@@ -115,10 +115,10 @@ int main()
             A.eb(make_pair(pts, name));
         }
         debug(A);
-        sort(A.begin(), A.end(), cmp);
+        sort(all(A), cmp);
         printf("Case %d:\n", ++cases);
         fore(e, A)
-            printf("%s %d\n", e.second.c_str(), e.first);
+            printf("%s %d\n", e.se.c_str(), e.fi);
     }
     return 0;
 }
